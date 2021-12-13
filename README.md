@@ -25,10 +25,10 @@ int main() {
 		switch (room) {
 		case 1:
 			NPC();
-			cout << "You are in room 1. You can go North." << endl;
+			cout << "You are in room 1. You can go (N)orth." << endl;
 			cout << "press p for shop" << endl;
 			cin >> input;
-			if (input == 'n')
+			if (input == 'N')
 				room = 2;
 			else if (input == 'p')
 				shop();
@@ -37,30 +37,43 @@ int main() {
 			break;
 		
 		case 2:
-			cout << "You are in room 2. You can go south , East or West." << endl;
+			cout << "You are in room 2. You can go (S)outh ,  (E)ast or (W)est." << endl;
 			cin >> input;
-			if (input == 's')
+			if (input == 'S')
 				room = 1;
-			else if (input == 'e')
+			else if (input == 'E')
 				room = 4;
-			else if (input == 'w')
+			else if (input == 'W')
 				room = 3;
 			else
 				cout << "sorry, not an option." << endl;
 			break;
 		case 3:
-			cout << "You are in room 2. You can go south , East or West." << endl;
+			cout << "You are in room 3. You can go (E)" << endl;
 			cin >> input;
-			if (input == 's')
-				room = 1;
-			else if (input == 'e')
-				room = 4;
-			else if (input == 'w')
-				room = 3;
+			if (input == 'E')
+				room = 2;
 			else
-				cout << "sorry, not an option." << endl;
-			break;
-
+				cout << "Sorry, not an option" << endl;
+		case 4:
+			cout << "You are in room 4. You can go (E)ast or (N)orth" << endl;
+			cin >> input;
+			if (input == 'E')
+				room = 2;
+			else if (input == 'N')
+				room = 5;
+			else
+				cout << "Sorry, not an option" << endl;
+		case 5:
+			cout << "You are in room 5. You can continue (N)orth to room 6 or go (S)outh." << endl;
+			cin >> input;
+			if (input == 'N')
+				room = 6;
+			else if (input == 'S')
+				room = 4;
+			else
+				cout << "Sorry, not an option" << endl;
+		
 		}
 	} while (input != 'q');
 }
